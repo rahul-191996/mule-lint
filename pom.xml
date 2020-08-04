@@ -33,6 +33,25 @@
       <groupId>org.nuisto</groupId>
       <artifactId>mule-lint-maven-plugin</artifactId>
       <version>0.5.1</version>
+ <executions>
+
+
+<execution>
+
+<id>runit</id>
+
+<phase>compile</phase>
+
+
+<goals>
+
+<goal>analyze-mule</goal>
+
+</goals>
+
+</execution>
+
+</executions>
       <configuration>
         <rules>rules.txt</rules>
         <sources>src/main/mule</sources>
