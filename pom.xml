@@ -28,45 +28,19 @@
 				<configuration>
 				</configuration>
 			</plugin>
-	<plugin>
-        <groupId>org.nuisto</groupId>
-        <artifactId>mule-lint-maven-plugin</artifactId>
-        <version>${mule.lint.version}</version>
-        <executions>
-          <execution>
-            <id>runit</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>analyze-mule</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <dictionary>dictionary.txt</dictionary>
-          <rules>rules.txt</rules>
-          <sources>src/main/mule</sources>
-          <output>results.json</output>
-        </configuration>
-      </plugin>
-      
-<plugin>
 
-<groupId>org.apache.maven.plugins</groupId>
-
-<artifactId>maven-compiler-plugin</artifactId>
-
-<version>3.6.2</version>
-
-
-<configuration>
-
-<source>1.8</source>
-
-<target>1.8</target>
-
-</configuration>
-
-</plugin>
+    <plugin>
+      <groupId>org.nuisto</groupId>
+      <artifactId>mule-lint-maven-plugin</artifactId>
+      <version>0.5.1</version>
+      <configuration>
+        <rules>rules.txt</rules>
+        <sources>src/main/app</sources>
+        <output>mule-lint-results.json</output>
+        <dictionary>words.txt</dictionary>
+      </configuration>
+    </plugin>
+ 
 
 
 
@@ -75,6 +49,11 @@
 
 
 	<dependencies>
+	<dependency>
+   <groupId>org.nuisto</groupId>
+   <artifactId>mule-lint-maven-plugin</artifactId>
+   <version>0.5.1</version>
+</dependency>
         <dependency>
             <groupId>org.mule.connectors</groupId>
             <artifactId>mule-http-connector</artifactId>
