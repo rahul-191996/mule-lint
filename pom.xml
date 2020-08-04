@@ -35,9 +35,9 @@
       <version>0.5.1</version>
       <configuration>
         <rules>rules.txt</rules>
-        <sources>src/main/app</sources>
-        <output>mule-lint-results.json</output>
-        <dictionary>words.txt</dictionary>
+        <sources>src/main/mule</sources>
+        <output>Desktop/mule-lint-results.json</output>
+        <dictionary>dictionary.txt</dictionary>
       </configuration>
     </plugin>
  
