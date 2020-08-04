@@ -15,6 +15,7 @@
 
 		<app.runtime>4.2.2</app.runtime>
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
+		<mule.lint.version>0.5.2-SNAPSHOT</mule.lint.version>
 	</properties>
 
 	<build>
@@ -27,18 +28,26 @@
 				<configuration>
 				</configuration>
 			</plugin>
-		
-    <plugin>
-      <groupId>org.nuisto</groupId>
-      <artifactId>mule-lint-maven-plugin</artifactId>
-      <version>0.5.1</version>
-      <configuration>
-        <rules>rules.txt</rules>
-        <sources>src/main/mule</sources>
-        <output>Desktop/mule-lint-results.json</output>
-        <dictionary>dictionary.txt</dictionary>
-      </configuration>
-    </plugin>
+	<plugin>
+        <groupId>org.nuisto</groupId>
+        <artifactId>mule-lint-maven-plugin</artifactId>
+        <version>${mule.lint.version}</version>
+        <executions>
+          <execution>
+            <id>runit</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>analyze-mule</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <dictionary>dictionary.txt</dictionary>
+          <rules>rules.txt</rules>
+          <sources>src/main/app</sources>
+          <output>results.json</output>
+        </configuration>
+      </plugin>
   </plugins>
 </build>
 
